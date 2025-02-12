@@ -23,22 +23,25 @@ const Header = () => {
           </Link>
           
           <nav className="hidden md:flex items-center gap-10">
-            <div className="flex items-center gap-1.5 cursor-pointer hover:text-black/70 transition-colors font-medium text-[15px]">
+            <Link href="/products" className="flex items-center gap-1.5 cursor-pointer hover:text-black/70 transition-colors font-medium text-[15px]">
               Products
               <ChevronDown size={14} />
-            </div>
-            <div className="flex items-center gap-1.5 cursor-pointer hover:text-black/70 transition-colors font-medium text-[15px]">
+            </Link>
+            <Link href="/solutions" className="flex items-center gap-1.5 cursor-pointer hover:text-black/70 transition-colors font-medium text-[15px]">
               Solutions
               <ChevronDown size={14} />
-            </div>
-            <div className="flex items-center gap-1.5 cursor-pointer hover:text-black/70 transition-colors font-medium text-[15px]">
+            </Link>
+            <Link href="/resources" className="flex items-center gap-1.5 cursor-pointer hover:text-black/70 transition-colors font-medium text-[15px]">
               Resources
               <ChevronDown size={14} />
-            </div>
-            <div className="flex items-center gap-1.5 cursor-pointer hover:text-black/70 transition-colors font-medium text-[15px]">
+            </Link>
+            <Link href="/company" className="flex items-center gap-1.5 cursor-pointer hover:text-black/70 transition-colors font-medium text-[15px]">
               Company
               <ChevronDown size={14} />
-            </div>
+            </Link>
+            <Link href="/crm" className="flex items-center gap-1.5 cursor-pointer hover:text-black/70 transition-colors font-medium text-[15px]">
+              CRM
+            </Link>
           </nav>
         </div>
 

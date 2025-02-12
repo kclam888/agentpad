@@ -24,11 +24,13 @@ interface DashboardLayoutProps {
 }
 
 const navItems = [
-  { icon: <LayoutDashboard className="w-5 h-5" />, label: 'Home', href: '/dashboard' },
-  { icon: <Users className="w-5 h-5" />, label: 'Customers', href: '/dashboard/customers' },
-  { icon: <MessageSquare className="w-5 h-5" />, label: 'Conversations', href: '/dashboard/conversations' },
-  { icon: <FolderKanban className="w-5 h-5" />, label: 'Campaigns', href: '/dashboard/campaigns' },
-  { icon: <BarChart2 className="w-5 h-5" />, label: 'Reporting', href: '/dashboard/reporting' },
+  { icon: <LayoutDashboard className="w-5 h-5" />, label: 'Dashboard', href: '/dashboard' },
+  { icon: <Users className="w-5 h-5" />, label: 'CRM', href: '/dashboard/crm' },
+  { icon: <Calendar className="w-5 h-5" />, label: 'Calendar', href: '/dashboard/calendar' },
+  { icon: <FolderKanban className="w-5 h-5" />, label: 'Projects', href: '/dashboard/projects' },
+  { icon: <FileText className="w-5 h-5" />, label: 'Documents', href: '/dashboard/documents' },
+  { icon: <BarChart2 className="w-5 h-5" />, label: 'Analytics', href: '/dashboard/analytics' },
+  { icon: <Settings className="w-5 h-5" />, label: 'Settings', href: '/dashboard/settings' },
 ];
 
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
