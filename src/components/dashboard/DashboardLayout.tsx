@@ -17,6 +17,7 @@ import {
   Users,
   MessageSquare,
   Bell,
+  Sparkles,
 } from 'lucide-react';
 
 interface DashboardLayoutProps {
@@ -26,6 +27,12 @@ interface DashboardLayoutProps {
 const navItems = [
   { icon: <LayoutDashboard className="w-5 h-5" />, label: 'Dashboard', href: '/dashboard' },
   { icon: <Users className="w-5 h-5" />, label: 'CRM', href: '/dashboard/crm' },
+  { 
+    icon: <Sparkles className="w-5 h-5 text-purple-500" />, 
+    label: 'AI Agents', 
+    href: '/dashboard/agents',
+    isSpecial: true 
+  },
   { icon: <Calendar className="w-5 h-5" />, label: 'Calendar', href: '/dashboard/calendar' },
   { icon: <FolderKanban className="w-5 h-5" />, label: 'Projects', href: '/dashboard/projects' },
   { icon: <FileText className="w-5 h-5" />, label: 'Documents', href: '/dashboard/documents' },
@@ -58,14 +65,24 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors ${
+                className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors relative ${
                   pathname === item.href
                     ? 'bg-[#6366F1]/5 text-[#6366F1]'
                     : 'text-gray-600 hover:bg-gray-50'
+                } ${
+                  item.isSpecial 
+                    ? 'bg-purple-50 hover:bg-purple-100 overflow-hidden'
+                    : ''
                 }`}
               >
                 {item.icon}
                 <span>{item.label}</span>
+                {item.isSpecial && (
+                  <>
+                    <div className="absolute inset-0 bg-purple-400/20 animate-pulse rounded-md"></div>
+                    <div className="absolute -inset-1 bg-purple-400/10 animate-pulse rounded-md blur-sm"></div>
+                  </>
+                )}
               </Link>
             ))}
           </nav>
