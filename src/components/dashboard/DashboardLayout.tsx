@@ -15,6 +15,7 @@ import {
   Menu,
   X,
   Sun,
+  Users,
 } from 'lucide-react';
 
 interface DashboardLayoutProps {
@@ -23,6 +24,7 @@ interface DashboardLayoutProps {
 
 const navItems = [
   { icon: <LayoutDashboard className="w-5 h-5" />, label: 'Dashboard', href: '/dashboard' },
+  { icon: <Users className="w-5 h-5" />, label: 'CRM', href: '/dashboard/crm' },
   { icon: <Calendar className="w-5 h-5" />, label: 'Calendar', href: '/dashboard/calendar' },
   { icon: <FolderKanban className="w-5 h-5" />, label: 'Projects', href: '/dashboard/projects' },
   { icon: <FileText className="w-5 h-5" />, label: 'Documents', href: '/dashboard/documents' },
