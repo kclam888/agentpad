@@ -9,10 +9,14 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    unoptimized: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
+  output: 'export',
+  distDir: '.next',
+  trailingSlash: true,
 };
 
 export default nextConfig; 
