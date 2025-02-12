@@ -1,12 +1,12 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [build.environment]
-  NEXT_USE_NETLIFY_EDGE = "true"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
   NODE_VERSION = "18"
 
 [[redirects]]
