@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { Play } from 'lucide-react';
+import Link from 'next/link';
 
 const AgentCard = ({ title, description, image }: { title: string; description: string; image: string }) => (
   <div className="bg-white rounded-lg shadow-sm p-4 flex gap-4 items-start">
@@ -51,9 +52,9 @@ const Hero = () => {
             </p>
           </div>
           <div className="flex gap-4 pt-4">
-            <button className="bg-[#2563EB] text-white px-8 py-4 rounded-full hover:bg-opacity-90 transition-colors font-medium text-lg">
+            <Link href="/dashboard" className="bg-[#2563EB] text-white px-8 py-4 rounded-full hover:bg-opacity-90 transition-colors font-medium text-lg">
               Launch Now
-            </button>
+            </Link>
             <button className="flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black hover:bg-opacity-90 transition-colors font-medium text-lg">
               <Play size={20} className="fill-current" />
               Learn More

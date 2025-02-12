@@ -42,9 +42,9 @@ const Header = () => {
           </nav>
         </div>
 
-        <button className="bg-black text-white px-7 py-2.5 rounded-full hover:bg-black/90 transition-colors font-medium text-[15px]">
+        <Link href="/dashboard" className="bg-black text-white px-7 py-2.5 rounded-full hover:bg-black/90 transition-colors font-medium text-[15px]">
           Launch Now
-        </button>
+        </Link>
       </div>
     </header>
   );
