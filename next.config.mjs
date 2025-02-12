@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -9,14 +10,10 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-    unoptimized: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
-  output: 'export',
-  distDir: 'out',
-  trailingSlash: true,
 };
 
 export default nextConfig; 
