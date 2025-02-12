@@ -36,49 +36,49 @@ const CRMDashboard = () => {
     <DashboardLayout>
       <div className="p-6 bg-[#F9FAFB] min-h-screen">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-[#111827]">Welcome to AgentPad CRM</h1>
-          <p className="text-[#6B7280] mt-2">Manage your customers, track interactions, and drive sales effortlessly.</p>
+          <h1 className="text-2xl font-semibold text-gray-900">CRM Dashboard</h1>
+          <p className="text-gray-600 mt-1">Track customer relationships and sales performance</p>
         </div>
 
         {/* Metrics Overview */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <div className="text-[#6B7280] text-sm mb-2">Total revenue</div>
-            <div className="text-2xl font-bold text-[#111827]">$1,500</div>
-            <div className="text-[#10B981] text-sm">+5%</div>
+          <div className="bg-white p-4 rounded-lg shadow-sm">
+            <div className="text-gray-600 text-sm mb-1">Total revenue</div>
+            <div className="text-2xl font-semibold text-gray-900">$1,500</div>
+            <div className="text-emerald-600 text-sm mt-1">+5%</div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <div className="text-[#6B7280] text-sm mb-2">Active customers</div>
-            <div className="text-2xl font-bold text-[#111827]">20</div>
-            <div className="text-[#10B981] text-sm">+5%</div>
+          <div className="bg-white p-4 rounded-lg shadow-sm">
+            <div className="text-gray-600 text-sm mb-1">Active customers</div>
+            <div className="text-2xl font-semibold text-gray-900">20</div>
+            <div className="text-emerald-600 text-sm mt-1">+5%</div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <div className="text-[#6B7280] text-sm mb-2">New customers</div>
-            <div className="text-2xl font-bold text-[#111827]">5</div>
-            <div className="text-[#10B981] text-sm">+5%</div>
+          <div className="bg-white p-4 rounded-lg shadow-sm">
+            <div className="text-gray-600 text-sm mb-1">New customers</div>
+            <div className="text-2xl font-semibold text-gray-900">5</div>
+            <div className="text-emerald-600 text-sm mt-1">+5%</div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <div className="text-[#6B7280] text-sm mb-2">Pending tasks</div>
-            <div className="text-2xl font-bold text-[#111827]">3</div>
-            <div className="text-[#EF4444] text-sm">+2</div>
+          <div className="bg-white p-4 rounded-lg shadow-sm">
+            <div className="text-gray-600 text-sm mb-1">Pending tasks</div>
+            <div className="text-2xl font-semibold text-gray-900">3</div>
+            <div className="text-red-500 text-sm mt-1">+2</div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Revenue Chart */}
           <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-sm">
-            <h2 className="text-lg font-semibold text-[#111827] mb-4">Revenue Overview</h2>
+            <h2 className="text-base font-semibold text-gray-900 mb-4">Revenue Overview</h2>
             <div className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-                  <XAxis dataKey="name" stroke="#6B7280" />
-                  <YAxis stroke="#6B7280" />
+                  <XAxis dataKey="name" stroke="#6B7280" fontSize={12} />
+                  <YAxis stroke="#6B7280" fontSize={12} />
                   <Tooltip />
                   <Line
                     type="monotone"
                     dataKey="revenue"
-                    stroke="#8B5CF6"
+                    stroke="#6366F1"
                     strokeWidth={2}
                     dot={false}
                   />
@@ -91,15 +91,15 @@ const CRMDashboard = () => {
           <div className="space-y-6">
             {/* Quick Access */}
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h2 className="text-lg font-semibold text-[#111827] mb-4">Quick access</h2>
+              <h2 className="text-base font-semibold text-gray-900 mb-4">Quick access</h2>
               <div className="space-y-4">
                 {quickAccessCustomers.map((customer, index) => (
-                  <div key={index} className="flex items-center justify-between">
+                  <div key={index} className="flex items-center justify-between hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer">
                     <div>
-                      <div className="font-medium text-[#111827]">{customer.name}</div>
-                      <div className="text-sm text-[#6B7280]">Last seen {customer.lastSeen}</div>
+                      <div className="font-medium text-gray-900">{customer.name}</div>
+                      <div className="text-sm text-gray-600">Last seen {customer.lastSeen}</div>
                     </div>
-                    <div className="text-[#6B7280]">${customer.amount}</div>
+                    <div className="text-gray-600">${customer.amount}</div>
                   </div>
                 ))}
               </div>
@@ -107,16 +107,16 @@ const CRMDashboard = () => {
 
             {/* Tasks */}
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h2 className="text-lg font-semibold text-[#111827] mb-4">Tasks</h2>
+              <h2 className="text-base font-semibold text-gray-900 mb-4">Tasks</h2>
               <div className="space-y-3">
                 {tasks.map((task) => (
-                  <div key={task.id} className="flex items-start gap-3">
+                  <div key={task.id} className="flex items-start gap-3 hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer">
                     {task.completed ? (
-                      <CheckCircle2 className="w-5 h-5 text-[#10B981] mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5" />
                     ) : (
-                      <Circle className="w-5 h-5 text-[#6B7280] mt-0.5" />
+                      <Circle className="w-5 h-5 text-gray-400 mt-0.5" />
                     )}
-                    <span className={task.completed ? 'text-[#6B7280] line-through' : 'text-[#111827]'}>
+                    <span className={task.completed ? 'text-gray-500 line-through' : 'text-gray-900'}>
                       {task.title}
                     </span>
                   </div>

@@ -37,9 +37,9 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   const pathname = usePathname();
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#F9FAFB]">
       {/* Header */}
-      <header className="h-14 bg-[#111111] border-b border-gray-800 fixed top-0 left-0 right-0 z-50">
+      <header className="h-14 bg-white border-b border-gray-200 fixed top-0 left-0 right-0 z-50">
         <div className="flex items-center h-full px-4">
           <div className="flex items-center gap-4">
             <Link href="/dashboard" className="flex items-center gap-2">
@@ -51,7 +51,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                   className="object-contain"
                 />
               </div>
-              <span className="font-medium text-sm">Bolt Workspace</span>
+              <span className="font-medium text-sm text-gray-900">Bolt Workspace</span>
             </Link>
           </div>
 
@@ -63,8 +63,8 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                 href={item.href}
                 className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-sm transition-colors ${
                   pathname === item.href
-                    ? 'bg-white/10 text-white'
-                    : 'text-gray-400 hover:bg-white/5 hover:text-white'
+                    ? 'bg-gray-100 text-gray-900'
+                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                 }`}
               >
                 {item.icon}
@@ -75,8 +75,8 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
 
           {/* Right Side */}
           <div className="ml-auto">
-            <button className="p-2 hover:bg-white/5 rounded-lg transition-colors">
-              <Sun className="w-5 h-5 text-gray-400" />
+            <button className="p-2 hover:bg-gray-50 rounded-lg transition-colors">
+              <Sun className="w-5 h-5 text-gray-600" />
             </button>
           </div>
         </div>
