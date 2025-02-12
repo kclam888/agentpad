@@ -1,3 +1,5 @@
+'use client';
+
 import DashboardLayout from '@/components/dashboard/DashboardLayout';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { CheckCircle2, Circle } from 'lucide-react';
@@ -31,7 +33,7 @@ const tasks = [
   { id: 3, title: 'Update product descriptions on website', completed: false },
 ];
 
-const CRMDashboard = () => {
+export default function CRMPage() {
   return (
     <DashboardLayout>
       <div className="p-6 bg-[#F9FAFB] min-h-screen">
@@ -128,6 +130,4 @@ const CRMDashboard = () => {
       </div>
     </DashboardLayout>
   );
-};
-
-export default CRMDashboard; 
+} 
